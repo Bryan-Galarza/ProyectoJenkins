@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="9.3">
+<file name="C:\Users\DELL\OneDrive - Universidad de Guayaquil\Documentos\NetBeansProjects\VentasCheckstyle\src\main\java\com\mycompany\ventascheckstyle\Controlador\CategoriaControlador.java">
+</file>
+<file name="C:\Users\DELL\OneDrive - Universidad de Guayaquil\Documentos\NetBeansProjects\VentasCheckstyle\src\main\java\com\mycompany\ventascheckstyle\Modelo\CategoriaDAO.java">
+</file>
+<file name="C:\Users\DELL\OneDrive - Universidad de Guayaquil\Documentos\NetBeansProjects\VentasCheckstyle\src\main\java\com\mycompany\ventascheckstyle\Modelo\CategoriaDTO.java">
+</file>
+<file name="C:\Users\DELL\OneDrive - Universidad de Guayaquil\Documentos\NetBeansProjects\VentasCheckstyle\src\main\java\com\mycompany\ventascheckstyle\Modelo\Conexion.java">
+</file>
+<file name="C:\Users\DELL\OneDrive - Universidad de Guayaquil\Documentos\NetBeansProjects\VentasCheckstyle\src\main\java\com\mycompany\ventascheckstyle\VentasCheckstyle.java">
+</file>
+<file name="C:\Users\DELL\OneDrive - Universidad de Guayaquil\Documentos\NetBeansProjects\VentasCheckstyle\src\main\java\com\mycompany\ventascheckstyle\Vista\CategoriasActualizar.java">
+<error line="238" column="18" severity="error" message="El nombre &apos;JTableCategoriasMouseClicked&apos; debe coincidir con el patrón &apos;^[a-z][a-zA-Z0-9]*$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.MethodNameCheck"/>
+</file>
+<file name="C:\Users\DELL\OneDrive - Universidad de Guayaquil\Documentos\NetBeansProjects\VentasCheckstyle\src\main\java\com\mycompany\ventascheckstyle\Vista\CategoriasEliminar.java">
+</file>
+<file name="C:\Users\DELL\OneDrive - Universidad de Guayaquil\Documentos\NetBeansProjects\VentasCheckstyle\src\main\java\com\mycompany\ventascheckstyle\Vista\CategoriasForm.java">
+</file>
+<file name="C:\Users\DELL\OneDrive - Universidad de Guayaquil\Documentos\NetBeansProjects\VentasCheckstyle\src\main\java\com\mycompany\ventascheckstyle\Vista\CategoriasFormListado.java">
+</file>
+<file name="C:\Users\DELL\OneDrive - Universidad de Guayaquil\Documentos\NetBeansProjects\VentasCheckstyle\src\main\java\com\mycompany\ventascheckstyle\Vista\CategoriasModu.java">
+</file>
+</checkstyle>
