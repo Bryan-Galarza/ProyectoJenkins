@@ -10,14 +10,20 @@ import static org.junit.jupiter.api.Assertions.*;
  * Estas pruebas no usan base de datos; solo prueban lógica mínima.
  */
 public class CategoriaControladorTest {
+    // Generar nombres aleatorios para evitar duplicacion
+    private String randomName(String base) {
+        return base + "_" + System.currentTimeMillis();
+    }
 
     @Test
     public void testRegistrarCategoria() {
         System.out.println("Iniciando test: registrarCategoria");
         CategoriaControlador controlador = new CategoriaControlador();
-        // Caso: nombre válido → debe registrar (true)
-        boolean resultadoValido = controlador.registrarCategoria("Electronica");
-        System.out.println("Resultado registrarCategoria(\"Electronica\"): " + resultadoValido);
+
+        String nombreUnico = randomName("Electronica");
+
+        boolean resultadoValido = controlador.registrarCategoria(nombreUnico);
+        System.out.println("Resultado registrarCategoria(\"" + nombreUnico + "\"): " + resultadoValido);
 
         assertTrue(resultadoValido, "Debe registrar una categoría válida");
         System.out.println("✅ Test registrarCategoria FINALIZADO correctamente");
@@ -29,8 +35,9 @@ public class CategoriaControladorTest {
 
         List<CategoriaDTO> lista = controlador.listarCategorias();
 
-        // Para este caso simple, asumimos que devuelve al menos una categoría si registrar funciona
-        controlador.registrarCategoria("PruebaCategoria");
+        String nombreUnico = randomName("PruebaCategoria");
+        controlador.registrarCategoria(nombreUnico);
+
         List<CategoriaDTO> lista2 = controlador.listarCategorias();
 
         assertTrue(lista2.size() >= lista.size(),
@@ -42,25 +49,21 @@ public class CategoriaControladorTest {
         System.out.println("🧪 Iniciando test: eliminarCategoria");
         CategoriaControlador controlador = new CategoriaControlador();
 
-        controlador.registrarCategoria("Temporal");
+        String nombreUnico = randomName("Temporal");
+        controlador.registrarCategoria(nombreUnico);
+
         List<CategoriaDTO> lista = controlador.listarCategorias();
-        System.out.println("Tamaño lista antes de eliminar: " + (lista != null ? lista.size() : "null"));
 
-        if (!lista.isEmpty()) {
-            int id = lista.get(0).getId();
-            System.out.println("Intentando eliminar categoría con id: " + id);
+        // buscar la categoría que acabamos de crear (seguro no tiene productos asociados)
+        CategoriaDTO creada = lista.stream()
+                .filter(c -> c.getNombre().equals(nombreUnico))
+                .findFirst()
+                .orElse(null);
 
-            boolean eliminado = controlador.eliminarCategoria(id);
-            System.out.println("Resultado eliminarCategoria(" + id + "): " + eliminado);
+        assertNotNull(creada, "La categoría recién creada debe existir");
 
-            assertTrue(eliminado, "Debe eliminar una categoría válida");
-        } else {
-            System.out.println("No hay categorías, probando eliminar ID inexistente 9999");
-            boolean eliminadoFalso = controlador.eliminarCategoria(9999);
-            System.out.println("Resultado eliminarCategoria(9999): " + eliminadoFalso);
-
-            assertFalse(eliminadoFalso, "Eliminar ID inexistente debe devolver false");
-        }
+        boolean eliminado = controlador.eliminarCategoria(creada.getId());
+        assertTrue(eliminado, "Debe eliminar la categoría recién creada");
 
         System.out.println("✅ Test eliminarCategoria FINALIZADO correctamente");
     }
@@ -68,18 +71,22 @@ public class CategoriaControladorTest {
     @Test
     public void testActualizarCategoria() {
         CategoriaControlador controlador = new CategoriaControlador();
-        // Registrar categoría inicial
-        controlador.registrarCategoria("Comida");
+
+        String nombreInicial = randomName("Comida");
+        controlador.registrarCategoria(nombreInicial);
+
         List<CategoriaDTO> lista = controlador.listarCategorias();
 
-        if (!lista.isEmpty()) {
-            int id = lista.get(0).getId();
+        CategoriaDTO creada = lista.stream()
+                .filter(c -> c.getNombre().equals(nombreInicial))
+                .findFirst()
+                .orElse(null);
 
-            boolean actualizado = controlador.actualizarCategoria(id, "Ropa");
-            assertTrue(actualizado, "Debe actualizar una categoría válida");
-        } else {
-            boolean actualizadoFalso = controlador.actualizarCategoria(0, "Otro");
-            assertFalse(actualizadoFalso, "Actualizar categoría inexistente debe fallar");
-        }
+        assertNotNull(creada, "La categoría recién creada debe existir");
+
+        String nuevoNombre = randomName("Ropa");
+        boolean actualizado = controlador.actualizarCategoria(creada.getId(), nuevoNombre);
+
+        assertTrue(actualizado, "Debe actualizar una categoría válida");
     }
 }
