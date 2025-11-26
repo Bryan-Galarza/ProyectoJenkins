@@ -12,7 +12,7 @@ public class CategoriasFormListado extends javax.swing.JFrame {
     public CategoriasFormListado() {
         initComponents();
         controlador = new CategoriaControlador();
-        tableModel =(DefaultTableModel)JTableCategorias.getModel();
+        tableModel =(DefaultTableModel)jTableCategorias.getModel();
         cargarCategoriasTabla();
     }
 
@@ -22,7 +22,7 @@ public class CategoriasFormListado extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        JTableCategorias = new javax.swing.JTable();
+        jTableCategorias = new javax.swing.JTable();
         btnRegresar = new javax.swing.JButton();
         jPanel7 = new javax.swing.JPanel();
         lblHeader4 = new javax.swing.JLabel();
@@ -36,7 +36,7 @@ public class CategoriasFormListado extends javax.swing.JFrame {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
 
-        JTableCategorias.setModel(new javax.swing.table.DefaultTableModel(
+        jTableCategorias.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -44,9 +44,9 @@ public class CategoriasFormListado extends javax.swing.JFrame {
                 "id", "Nombre"
             }
         ));
-        jScrollPane1.setViewportView(JTableCategorias);
-        if (JTableCategorias.getColumnModel().getColumnCount() > 0) {
-            JTableCategorias.getColumnModel().getColumn(1).setResizable(false);
+        jScrollPane1.setViewportView(jTableCategorias);
+        if (jTableCategorias.getColumnModel().getColumnCount() > 0) {
+            jTableCategorias.getColumnModel().getColumn(1).setResizable(false);
         }
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -226,7 +226,6 @@ public class CategoriasFormListado extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTable JTableCategorias;
     private javax.swing.JButton btnCategorias1;
     private javax.swing.JButton btnModProductos;
     private javax.swing.JButton btnModVentas;
@@ -236,6 +235,7 @@ public class CategoriasFormListado extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTableCategorias;
     private javax.swing.JLabel lblHeader4;
     // End of variables declaration//GEN-END:variables
 }

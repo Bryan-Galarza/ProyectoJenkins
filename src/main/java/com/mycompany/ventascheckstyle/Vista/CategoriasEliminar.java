@@ -14,7 +14,7 @@ public class CategoriasEliminar extends javax.swing.JFrame {
     public CategoriasEliminar() {
         initComponents();
         controlador = new CategoriaControlador();
-        tableModel =(DefaultTableModel)JTableCategorias.getModel();
+        tableModel =(DefaultTableModel)jTableCategorias.getModel();
         cargarCategoriasTabla();
     }
 
@@ -24,7 +24,7 @@ public class CategoriasEliminar extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        JTableCategorias = new javax.swing.JTable();
+        jTableCategorias = new javax.swing.JTable();
         btnRegresar = new javax.swing.JButton();
         jPanel7 = new javax.swing.JPanel();
         lblHeader4 = new javax.swing.JLabel();
@@ -39,7 +39,7 @@ public class CategoriasEliminar extends javax.swing.JFrame {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
 
-        JTableCategorias.setModel(new javax.swing.table.DefaultTableModel(
+        jTableCategorias.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -47,7 +47,7 @@ public class CategoriasEliminar extends javax.swing.JFrame {
                 "id", "Nombre"
             }
         ));
-        jScrollPane1.setViewportView(JTableCategorias);
+        jScrollPane1.setViewportView(jTableCategorias);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -218,12 +218,12 @@ public class CategoriasEliminar extends javax.swing.JFrame {
     }//GEN-LAST:event_btnModVentasActionPerformed
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
-        int filaSeleccionada = JTableCategorias.getSelectedRow();
+        int filaSeleccionada = jTableCategorias.getSelectedRow();
         if (filaSeleccionada == -1){
             JOptionPane.showMessageDialog(this, "Debe seleccionar una fila para eliminar.", "Advertencia", JOptionPane.WARNING_MESSAGE);
             return;
             }
-        int idProducto = (int) JTableCategorias.getValueAt(filaSeleccionada, 0);
+        int idProducto = (int) jTableCategorias.getValueAt(filaSeleccionada, 0);
         int confirmacion = JOptionPane.showConfirmDialog(this, ""
                 + "¿Está seguro que desea eliminar este categoria del sistema?",
                 "Confirmar eliminación", JOptionPane.YES_NO_OPTION);
@@ -283,7 +283,6 @@ public class CategoriasEliminar extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTable JTableCategorias;
     private javax.swing.JButton btnCategorias1;
     private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnModProductos;
@@ -294,6 +293,7 @@ public class CategoriasEliminar extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTableCategorias;
     private javax.swing.JLabel lblHeader4;
     // End of variables declaration//GEN-END:variables
 }

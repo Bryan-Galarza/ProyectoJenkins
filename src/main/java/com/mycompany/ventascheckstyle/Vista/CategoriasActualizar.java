@@ -14,7 +14,7 @@ public class CategoriasActualizar extends javax.swing.JFrame {
     public CategoriasActualizar() {
         initComponents();
         controlador = new CategoriaControlador();
-        tableModel =(DefaultTableModel)JTableCategorias.getModel();
+        tableModel =(DefaultTableModel)jTableCategorias.getModel();
         cargarCategoriasTabla();
     }
 
@@ -24,7 +24,7 @@ public class CategoriasActualizar extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        JTableCategorias = new javax.swing.JTable();
+        jTableCategorias = new javax.swing.JTable();
         btnRegresar = new javax.swing.JButton();
         jPanel7 = new javax.swing.JPanel();
         lblHeader4 = new javax.swing.JLabel();
@@ -41,7 +41,7 @@ public class CategoriasActualizar extends javax.swing.JFrame {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
 
-        JTableCategorias.setModel(new javax.swing.table.DefaultTableModel(
+        jTableCategorias.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -49,12 +49,12 @@ public class CategoriasActualizar extends javax.swing.JFrame {
                 "id", "Nombre"
             }
         ));
-        JTableCategorias.addMouseListener(new java.awt.event.MouseAdapter() {
+        jTableCategorias.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                JTableCategoriasMouseClicked(evt);
+                jTableCategoriasMouseClicked(evt);
             }
         });
-        jScrollPane1.setViewportView(JTableCategorias);
+        jScrollPane1.setViewportView(jTableCategorias);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -235,12 +235,12 @@ public class CategoriasActualizar extends javax.swing.JFrame {
        // new ventasForm().setVisible(true);
     }//GEN-LAST:event_btnModVentasActionPerformed
 
-    private void JTableCategoriasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JTableCategoriasMouseClicked
-       int fila = JTableCategorias.getSelectedRow();
+    private void jTableCategoriasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableCategoriasMouseClicked
+       int fila = jTableCategorias.getSelectedRow();
        if (fila != -1) {
             cargarCampos(fila);
        }
-    }//GEN-LAST:event_JTableCategoriasMouseClicked
+    }//GEN-LAST:event_jTableCategoriasMouseClicked
 
     private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
        
@@ -249,7 +249,7 @@ public class CategoriasActualizar extends javax.swing.JFrame {
     }//GEN-LAST:event_btnActualizarActionPerformed
  
     private void actualizar(){
-        int fila = JTableCategorias.getSelectedRow();
+        int fila = jTableCategorias.getSelectedRow();
         if (fila == -1) {
             JOptionPane.showMessageDialog(this, "Por favor, selecciona una categoría de la tabla.");
             return;
@@ -261,7 +261,7 @@ public class CategoriasActualizar extends javax.swing.JFrame {
             return;
         }
 
-        DefaultTableModel model = (DefaultTableModel) JTableCategorias.getModel();
+        DefaultTableModel model = (DefaultTableModel) jTableCategorias.getModel();
         int id = (int) model.getValueAt(fila, 0); // Obtén el ID de la categoría seleccionada
 
         boolean actualizado = controlador.actualizarCategoria(id, nombre);
@@ -285,7 +285,7 @@ public class CategoriasActualizar extends javax.swing.JFrame {
     }
      
     private void cargarCampos(int fila) {
-       DefaultTableModel model = (DefaultTableModel) JTableCategorias.getModel();
+       DefaultTableModel model = (DefaultTableModel) jTableCategorias.getModel();
        txtNombre.setText(model.getValueAt(fila, 1).toString());
      }
         
@@ -298,7 +298,6 @@ public class CategoriasActualizar extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTable JTableCategorias;
     private javax.swing.JButton btnActualizar;
     private javax.swing.JButton btnCategorias1;
     private javax.swing.JButton btnModProductos;
@@ -310,6 +309,7 @@ public class CategoriasActualizar extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTableCategorias;
     private javax.swing.JLabel lblHeader4;
     private javax.swing.JTextField txtNombre;
     // End of variables declaration//GEN-END:variables
