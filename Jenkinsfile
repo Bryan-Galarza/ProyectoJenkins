@@ -34,7 +34,7 @@ pipeline {
 
     post {
         always {
-            mail to: 'galarzabryan@gmail.com',
+            mail to: 'galarzabryan13@gmail.com',
                  subject: "Resultado del pipeline: ${currentBuild.currentResult}",
                  body: "El pipeline ha terminado. Resultado: ${currentBuild.currentResult}"
         }
