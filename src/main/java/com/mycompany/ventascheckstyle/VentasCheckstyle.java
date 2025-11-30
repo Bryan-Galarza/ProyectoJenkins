@@ -2,6 +2,7 @@ package com.mycompany.ventascheckstyle;
 
 /**
  * @author Grupo H
+ * 
  */
 public class VentasCheckstyle {
 
