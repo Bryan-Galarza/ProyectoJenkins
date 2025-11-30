@@ -1,12 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- */
-
 package com.mycompany.ventascheckstyle;
 
 /**
- *
- * @author DELL
+ * @author Grupo H
  */
 public class VentasCheckstyle {
 
