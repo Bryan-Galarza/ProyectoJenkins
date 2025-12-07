@@ -6,6 +6,7 @@ import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
+
 public class CategoriasEliminar extends javax.swing.JFrame {
 
     private CategoriaControlador controlador;

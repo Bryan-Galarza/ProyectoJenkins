@@ -1,4 +1,4 @@
-//GrupoH
+//Grupo H
 package com.mycompany.ventascheckstyle.Vista;
 import com.mycompany.ventascheckstyle.Controlador.CategoriaControlador;
 import com.mycompany.ventascheckstyle.Modelo.CategoriaDTO;
@@ -6,7 +6,6 @@ import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
-//INterfaz de update
 public class CategoriasActualizar extends javax.swing.JFrame {
     private CategoriaControlador controlador;
     private DefaultTableModel tableModel;
