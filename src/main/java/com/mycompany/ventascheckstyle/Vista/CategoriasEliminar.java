@@ -1,3 +1,4 @@
+//Grupo H
 package com.mycompany.ventascheckstyle.Vista;
 
 import com.mycompany.ventascheckstyle.Controlador.CategoriaControlador;
