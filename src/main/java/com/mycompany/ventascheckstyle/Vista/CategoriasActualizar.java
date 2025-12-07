@@ -1,4 +1,5 @@
-//GrupoH 
+//GrupoH
+
 package com.mycompany.ventascheckstyle.Vista;
 import com.mycompany.ventascheckstyle.Controlador.CategoriaControlador;
 import com.mycompany.ventascheckstyle.Modelo.CategoriaDTO;
