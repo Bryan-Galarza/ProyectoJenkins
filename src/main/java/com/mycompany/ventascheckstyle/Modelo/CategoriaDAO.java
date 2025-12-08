@@ -2,7 +2,7 @@
 package com.mycompany.ventascheckstyle.Modelo;
 /**
  *
- * @author BryanG
+ * @author GrupoH
  */
 import java.sql.Connection;
 import java.sql.PreparedStatement;

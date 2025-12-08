@@ -1,11 +1,10 @@
-
 package com.mycompany.ventascheckstyle.Controlador;
 
 import com.mycompany.ventascheckstyle.Modelo.CategoriaDAO;
 import com.mycompany.ventascheckstyle.Modelo.CategoriaDTO;
 import java.util.List;
 
-
+//Controlador de categoria
 public class CategoriaControlador {
     private CategoriaDAO categoriaDAO;
 
